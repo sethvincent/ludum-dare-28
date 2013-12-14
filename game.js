@@ -22,16 +22,39 @@ var game = new Game({
   backgroundColor: '#323230'
 });
 
+var players = {
+  'eika': true,
+  'fullerton': false
+};
+
+function switchPlayer(){
+  if (current === 'eika'){
+    players['eika'] = false;
+    players['fullerton'] = true;
+    return 'fullerton';
+  } else {
+    players['eika'] = true;
+    players['fullerton'] = false;
+    return 'eika';
+  }
+}
+
+function activePlayer(){
+  if (players['eika']) return 'eika';
+  else return 'fullerton';
+}
 
 /*
 * terminal
 */
-var log = new Log();
+var logOne = new Log('log-eika');
+var logTwo = new Log('log-fullerton');
 var terminal = new Terminal();
 
 terminal.on('command', function(message, command, option){
   //console.log(command, option);
-  log.add(message);
+  logOne.add(message);
+  logTwo.add(message);
   var color = randomRGB(0, 125, 0, 25, 0, 55);
   game.backgroundColor = color;
 });

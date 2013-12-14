@@ -10,7 +10,8 @@ function Terminal(){
   this.addListeners();
 
   this.methods = {
-    help: this.help
+    help: this.help,
+    location: this.location
   }
 }
 
@@ -28,7 +29,7 @@ Terminal.prototype.addListeners = function(){
 
     var message = '';
     if (self.methods[command]) message = self.methods[command](option);
-    else message = 'nope, not a method for that command';
+    else message = 'that is not a command. use `help` to learn more.';
 
     self.emit('command', message, command, option);
   });
@@ -36,4 +37,8 @@ Terminal.prototype.addListeners = function(){
 
 Terminal.prototype.help = function(option){
   return 'this is the help message';
+}
+
+Terminal.prototype.location = function(option){
+  return 'You are in the whatever';
 }

@@ -2,19 +2,22 @@ var template = require('lodash.template');
 
 module.exports = Log;
 
-function Log(){
-  this.el = document.getElementById('log');
-  this.template = document.getElementById('log-message-template').innerHTML;
+function Log(id){
+  this.el = document.getElementById(id);
 }
 
-Log.prototype.add = function(html){
-  var item =  document.createElement('li');
-  item.innerHTML = html;
-  item.style.listStyleType = 'none';
+Log.prototype.add = function(message){
+  var self = this;
+  this.el.style.display = 'block';
+  var item = document.createElement('li');
+  item.innerHTML = message;
   this.el.appendChild(item);
-  this.el.scrollTop = this.el.scrollHeight;
+  setTimeout(function(){
+    self.el.removeChild(item);
+    self.el.style.display = 'none';
+  }, 3000)
 };
 
 Log.prototype.clear = function(){
-  this.el.innerHTML = '';
+  if (this.el.querySelectors('li:visible').length === 0) console.log('yep')
 };

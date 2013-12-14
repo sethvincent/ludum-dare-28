@@ -8,7 +8,8 @@
 
 <header id="header">
   <div id="log-wrapper">
-    <ul id="log"></ul>
+    <ul id="log-eika" class="log"></ul>
+    <ul id="log-fullerton" class="log"></ul>
   </div>
 </header>
 
@@ -16,15 +17,11 @@
 
 <footer id="footer">
   <form id="terminal">
-    <input type="text" autofocus="autofocus">
+    <span id="terminal-player">fullerton</span> > <input type="text" autofocus="autofocus">
     <input type="submit" id="terminal-submit">
   </form>
 </footer>
 
-<!-- log message template -->
-<script id="log-message-template" type="text/template">
-  <li class="log-message"><%= message %></li>
-</script>
 
 <!-- primary js file -->
 <script src="bundle.js"></script>

@@ -33,20 +33,29 @@ textarea {
   box-sizing: border-box;
 }
 
-ul#log {
+ul.log {
   margin: 0px;
   padding: 0px;
   position: fixed;
   top: 20px;
-  left: 20px;
+
   background-color: rgba(33, 33, 33, 0.4);
   color: #f3f3f1;
   padding: 20px;
 }
 
-ul#log li.log-message {
+ul#log-eika {
+  left: 20px;
+}
+
+ul#log-fullerton {
+  right: 20px;
+}
+
+ul.log li {
   list-style-type: none;
   color: #f3f3f1;
+  padding: 3px 0px;
 }
 
 canvas#game {
@@ -57,14 +66,29 @@ footer {
   height: 80px;
 }
 
+#terminal {
+  outline: 0;
+  color: #f3f3f1;
+  font-size: 28px;
+}
+
+#terminal span {
+  display: inline-block;
+  outline: 0;
+  color: #f3f3f1;
+  font-size: 28px;
+  padding-left: 20px;
+}
+
 #terminal input {
   background-color: #323230;
   border: 1px solid #323230;
   outline: 0;
   color: #f3f3f1;
   font-size: 28px;
-  width: 100%;
-  padding: 17px 20px 20px 20px;
+  width: 80%;
+  padding: 17px 20px 20px 5px;
+  display: inline-block;
 }
 
 input#terminal-submit {

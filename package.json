@@ -1,0 +1,22 @@
+{
+  "name": "ludum-dare-28",
+  "description": "ludum-dare-28",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/sethvincent/ludum-dare-28.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": ""
+  },
+  "dependencies": {
+    "inherits": "~2.0.1",
+    "crtrdg-keyboard": "0.0.2",
+    "crtrdg-mouse": "0.0.3",
+    "crtrdg-gameloop": "~0.1.0",
+    "crtrdg-entity": "0.0.8",
+    "buffet": "~0.6.0"
+  },
+  "devDependencies": {}
+}

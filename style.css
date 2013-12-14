@@ -1,0 +1,72 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #323230;
+  overflow: hidden;
+}
+
+canvas {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+html,
+body,
+input,
+button,
+select,
+textarea {
+  font: 16px/1.2 "Helvetica Neue", Helvetica, arial, sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul#log {
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(33, 33, 33, 0.4);
+  color: #f3f3f1;
+  padding: 20px;
+}
+
+ul#log li.log-message {
+  list-style-type: none;
+  color: #f3f3f1;
+}
+
+canvas#game {
+  border-bottom: 1px solid #555;
+}
+
+footer {
+  height: 80px;
+}
+
+#terminal input {
+  background-color: #323230;
+  border: 1px solid #323230;
+  outline: 0;
+  color: #f3f3f1;
+  font-size: 28px;
+  width: 100%;
+  padding: 17px 20px 20px 20px;
+}
+
+input#terminal-submit {
+  visibility: none;
+}

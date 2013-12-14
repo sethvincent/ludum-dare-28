@@ -7,8 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "start": ""
+    "start": "beefy game.js:bundle.js --live"
   },
   "dependencies": {
     "inherits": "~2.0.1",
@@ -16,7 +15,11 @@
     "crtrdg-mouse": "0.0.3",
     "crtrdg-gameloop": "~0.1.0",
     "crtrdg-entity": "0.0.8",
-    "buffet": "~0.6.0"
+    "buffet": "~0.6.0",
+    "lodash.template": "~2.4.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "beefy": "~0.6.0",
+    "browserify": "~3.2.2"
+  }
 }

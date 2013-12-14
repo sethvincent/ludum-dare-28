@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>through the old library</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header">
+  <div id="log-wrapper">
+    <ul id="log"></ul>
+  </div>
+</header>
+
+<canvas id="game"></canvas>
+
+<footer id="footer">
+  <form id="terminal">
+    <input type="text" autofocus="autofocus">
+    <input type="submit" id="terminal-submit">
+  </form>
+</footer>
+
+<!-- log message template -->
+<script id="log-message-template" type="text/template">
+  <li class="log-message"><%= message %></li>
+</script>
+
+<!-- primary js file -->
+<script src="bundle.js"></script>
+
+</body>
+</html>

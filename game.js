@@ -23,48 +23,40 @@ var game = new Game({
 });
 
 var players = {
-  'eika': true,
-  'fullerton': false
+  eika: {
+    name: 'eika',
+    log: new Log('log-eika')
+  },
+  fullerton: {
+    name: 'fullerton',
+    log: new Log('log-fullerton')
+  }
 };
 
-function switchPlayer(){
-  if (currentPlayer === 'eika'){
-    players['eika'] = false;
-    players['fullerton'] = true;
-    return 'fullerton';
-  } else {
-    players['eika'] = true;
-    players['fullerton'] = false;
-    return 'eika';
-  }
-}
+var currentPlayer = players.eika;
 
-function activePlayer(){
-  if (players['eika']) return 'eika';
-  else return 'fullerton';
+function switchPlayer(){
+  if (currentPlayer.name === 'eika') currentPlayer = players.fullerton;
+  else currentPlayer = players.eika;
 }
 
 function playerElUpdate(player){
   var el = document.getElementById('terminal-player');
-  el.innerHTML = player;
+  el.innerHTML = player.name;
 }
 
-var currentPlayer = 'eika';
 playerElUpdate(currentPlayer);
 
 /*
 * terminal
 */
 
-var logOne = new Log('log-eika');
-var logTwo = new Log('log-fullerton');
 var terminal = new Terminal();
 
 terminal.on('command', function(message, command, option){
-  currentPlayer = switchPlayer();
+  currentPlayer.log.add(message);
+  switchPlayer();
   playerElUpdate(currentPlayer);
-  logOne.add(message);
-  logTwo.add(message);
   var color = randomRGB(0, 125, 0, 25, 0, 55);
   game.backgroundColor = color;
 });

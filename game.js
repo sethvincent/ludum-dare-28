@@ -35,13 +35,13 @@ var rows = game.height / size;
 
 game.on('draw', function(c){
 
-  for (var w=0; w<columns; w+=randomInt(5, 20)){
-    c.fillStyle = randomRGBA(0, 255, 0, 200, 0, 211, 0.5);
+  //for (var w=0; w<columns; w+=randomInt(5, 20)){
+    //c.fillStyle = randomRGBA(0, 255, 0, 200, 0, 211, 0.5);
     //c.fillRect(size*w, 0, randomInt(1, 3), game.height);    
-  }
+  //}
 
   for (var h=0; h<rows; h+=randomInt(5, 20)){
-    c.fillStyle = randomRGBA(h*10, h*20, 0, 0, 0, 1, 0.6);
+    c.fillStyle = randomRGBA(0, 0, 0, 0, 0, 0, 0.6);
     c.fillRect(0, size*h, game.width, randomInt(1, 2));
   }
 

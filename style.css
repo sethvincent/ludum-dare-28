@@ -38,7 +38,7 @@ ul.log {
   padding: 0px;
   position: fixed;
   top: 20px;
-
+  display: none;
   background-color: rgba(33, 33, 33, 0.4);
   color: #f3f3f1;
   padding: 20px;

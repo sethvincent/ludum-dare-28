@@ -29,7 +29,7 @@ Terminal.prototype.addListeners = function(){
 
     var message = '';
     if (self.methods[command]) message = self.methods[command](option);
-    else message = 'that is not a command. use `help` to learn more.';
+    else message = '`' + command + '` is not a command. use `help` to learn more.';
 
     self.emit('command', message, command, option);
   });

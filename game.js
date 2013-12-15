@@ -28,7 +28,7 @@ var players = {
 };
 
 function switchPlayer(){
-  if (current === 'eika'){
+  if (currentPlayer === 'eika'){
     players['eika'] = false;
     players['fullerton'] = true;
     return 'fullerton';
@@ -44,19 +44,27 @@ function activePlayer(){
   else return 'fullerton';
 }
 
+function playerElUpdate(player){
+  var el = document.getElementById('terminal-player');
+  el.innerHTML = player;
+}
+
+var currentPlayer = 'eika';
+playerElUpdate(currentPlayer);
+
 /*
 * terminal
 */
+
 var logOne = new Log('log-eika');
 var logTwo = new Log('log-fullerton');
 var terminal = new Terminal();
 
 terminal.on('command', function(message, command, option){
-  //console.log(command, option);
+  currentPlayer = switchPlayer();
+  playerElUpdate(currentPlayer);
   logOne.add(message);
   logTwo.add(message);
   var color = randomRGB(0, 125, 0, 25, 0, 55);
   game.backgroundColor = color;
 });
-
-
